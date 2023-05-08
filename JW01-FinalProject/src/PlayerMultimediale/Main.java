@@ -67,10 +67,10 @@ public class Main {
 
     public static void Play() {
         for (int seleziona = -1; seleziona != 0; ) {
-            System.out.println("Quale elemento vuoi riprodurre? \n Scegli:  \n > 1-10   \n > 0 per terminare");
+            System.out.println("Quale elemento vuoi riprodurre? \n Scegli:  \n > 1-6   \n > 0 per terminare");
             seleziona = input.nextInt();
 
-            if (seleziona >= 0 && seleziona <= 10) {
+            if (seleziona >= 0 && seleziona <= 6) {
                 ElementoMultimediale elemento = arr[seleziona - 1];
 
                 if (elemento instanceof Immagine) {
