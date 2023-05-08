@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
-    static ElementoMultimediale[] media = new ElementoMultimediale[5];
+    static ElementoMultimediale[] arr = new ElementoMultimediale[5];
 
     public static void main(String[] args) {
     	PlayMulty();
@@ -15,7 +15,7 @@ public class Main {
     public static void PlayMulty() {
 
     	
-        for (int i = 0; i < media.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.println("Scegli l'opzione multimediale: \n > 1 Immagine \n > 2 Video, \n > 3 Registrazione Audio");
 
             int input1 = input.nextInt();
@@ -28,7 +28,7 @@ public class Main {
                     String titolo1 = input.nextLine();
                     System.out.println("Regola la luminosità:");
                     int luminosita1 = input.nextInt();
-                    media[i] = new Immagine(titolo1, luminosita1);
+                    arr[i] = new Immagine(titolo1, luminosita1);
                     break;
                     
                 case 2:
@@ -40,7 +40,7 @@ public class Main {
                     int volume2 = input.nextInt();
                     System.out.println("Regola la luminosità:");
                     int luminosita2 = input.nextInt();
-                    media[i] = new Video(titolo2, durata2, volume2, luminosita2);
+                    arr[i] = new Video(titolo2, durata2, volume2, luminosita2);
                     break;
                     
                 case 3:
@@ -50,7 +50,7 @@ public class Main {
                     int durata3 = input.nextInt();
                     System.out.println("Regola il volume:");
                     int volume3 = input.nextInt();
-                    media[i] = new Audio(titolo3, durata3, volume3);
+                    arr[i] = new Audio(titolo3, durata3, volume3);
                     break;
                     
                 default:
@@ -71,7 +71,7 @@ public class Main {
             seleziona = input.nextInt();
 
             if (seleziona >= 0 && seleziona <= 10) {
-                ElementoMultimediale elemento = media[seleziona - 1];
+                ElementoMultimediale elemento = arr[seleziona - 1];
 
                 if (elemento instanceof Immagine) {
                     ((Immagine) elemento).show();
