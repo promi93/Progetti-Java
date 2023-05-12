@@ -3,6 +3,7 @@ package PlayerMultimediale;
 import java.util.Scanner;
 
 public class Main {
+	
     static Scanner input = new Scanner(System.in);
     static ElementoMultimediale[] arr = new ElementoMultimediale[5];
 
