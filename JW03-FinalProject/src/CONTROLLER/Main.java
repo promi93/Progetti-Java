@@ -1,12 +1,15 @@
 package CONTROLLER;
 
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import MODEL.Libro;
+import MODEL.Rivista;
 import DAO.ICatalogoDao;
+import ENUM.Periodicita;
 import DAO.CatalogoDao;
 
 
@@ -22,18 +25,15 @@ public class Main {
 		
 		
 		 ICatalogoDao pubb = new CatalogoDao();
+		 
 		
 		 try {
 		 
-			Libro lib = new Libro();
-	        lib.setCodiceISBN("978-1234567890");
-	        lib.setTitolo("Titolo libro casuale");
-	        lib.setAnno_pubblicazione(2021);
-	        lib.setNumero_pagine(200);
-	        lib.setAutore("Autore del libro");
-	        lib.setGenere("Genere del libro");
 	        
-	        pubb.addElemento(lib);
+	        pubb.addElemento(new Libro("Autore", "Genere libro", "codiceISBN", "Titolo libro", 2020,  200));
+	        pubb.addElemento(new Rivista("codiceISBN", "Titolo Rivista", 2018, 100, Periodicita.MENSILE));
+	        
+	        
 	        
 	        
 		 } catch (Exception e) {

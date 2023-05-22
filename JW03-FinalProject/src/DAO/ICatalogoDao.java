@@ -3,6 +3,7 @@ package DAO;
 import java.util.List;
 
 import MODEL.Catalogo;
+import MODEL.Libro;
 
 public interface ICatalogoDao {
     void addElemento(Catalogo catalogo);

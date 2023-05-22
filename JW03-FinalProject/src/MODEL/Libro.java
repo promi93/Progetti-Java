@@ -1,15 +1,14 @@
 package MODEL;
 
 
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 
 @Entity
 @DiscriminatorValue("LIBRO")
-@Table(name = "libro")
 public class Libro extends Catalogo {
 
 	@Column(nullable = false)
@@ -26,11 +25,17 @@ public class Libro extends Catalogo {
 
 
 
-	public Libro(String autore, String genere) {
-		super();
-		this.autore = autore;
-		this.genere = genere;
+
+	public Libro(String autore, String genere, String codiceISBN, String titolo, Integer anno_pubblicazione, Integer numero_pagine) {
+		super(codiceISBN, titolo, anno_pubblicazione, numero_pagine);
+		
+			this.autore = autore;
+			this.genere = genere;
+			
 	}
+
+
+
 
 
 

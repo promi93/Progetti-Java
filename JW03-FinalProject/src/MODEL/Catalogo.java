@@ -1,6 +1,5 @@
 package MODEL;
 
-import java.time.LocalDate;
 
 
 import javax.persistence.Column;
@@ -12,13 +11,12 @@ import javax.persistence.Inheritance;
 import javax.persistence.Table;
 import javax.persistence.InheritanceType;
 
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "catalogo")
 
 @Entity
 public class Catalogo {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -31,7 +29,7 @@ public class Catalogo {
 	private String titolo;
 	
 	@Column(nullable = false)
-	private LocalDate anno_pubblicazione;
+	private Integer anno_pubblicazione;
 	
 	@Column(nullable = false)
 	private Integer numero_pagine;
@@ -44,7 +42,7 @@ public class Catalogo {
 
 
 
-	public Catalogo(String codiceISBN, String titolo, LocalDate anno_pubblicazione, Integer numero_pagine) {
+	public Catalogo(String codiceISBN, String titolo, Integer anno_pubblicazione, Integer numero_pagine) {
 		super();
 		this.codiceISBN = codiceISBN;
 		this.titolo = titolo;
@@ -90,13 +88,13 @@ public class Catalogo {
 
 
 
-	public LocalDate getAnno_pubblicazione() {
+	public Integer getAnno_pubblicazione() {
 		return anno_pubblicazione;
 	}
 
 
 
-	public void setAnno_pubblicazione(LocalDate anno_pubblicazione) {
+	public void setAnno_pubblicazione(Integer anno_pubblicazione) {
 		this.anno_pubblicazione = anno_pubblicazione;
 	}
 

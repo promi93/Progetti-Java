@@ -11,7 +11,6 @@ import ENUM.Periodicita;
 
 @Entity
 @DiscriminatorValue("RIVISTA")
-@Table(name = "rivista")
 public class Rivista extends Catalogo {
 
 	@Enumerated(EnumType.STRING)
@@ -26,8 +25,8 @@ public class Rivista extends Catalogo {
 
 
 
-	public Rivista(Periodicita periodicita) {
-		super();
+	public Rivista(String codiceISBN, String titolo, Integer anno_pubblicazione, Integer numero_pagine, Periodicita periodicita) {
+		super(codiceISBN, titolo, anno_pubblicazione, numero_pagine);
 		this.periodicita = periodicita;
 	}
 
