@@ -4,14 +4,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import com.gestione.prenotazioni.aziendali.model.Booking;
+import com.gestione.prenotazioni.aziendali.model.Location;
 
 @Configuration
-public class BookingConfiguration {
+public class LocationConfiguration {
 
 	@Bean
 	@Scope("prototype")
-	public Booking bookingReservation() {
-		return new Booking();
+	public Location newLocation() {
+		return new Location();
 	}
 }
