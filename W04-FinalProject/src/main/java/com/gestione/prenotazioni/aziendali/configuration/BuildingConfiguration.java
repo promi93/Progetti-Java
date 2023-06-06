@@ -12,7 +12,7 @@ public class BuildingConfiguration {
 
 	@Bean
 	@Scope("prototype")
-	public Building FakeEdificio() {
+	public Building createBuilding() {
 		Building building =new Building();
 		building.setName("Edificio A");
 		building.setAddress("Via - Don Minzoni, n°20");
