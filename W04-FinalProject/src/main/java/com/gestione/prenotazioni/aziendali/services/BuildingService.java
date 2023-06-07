@@ -1,8 +1,9 @@
 package com.gestione.prenotazioni.aziendali.services;
 
-import java.util.Optional;
 
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.gestione.prenotazioni.aziendali.model.Building;
@@ -12,12 +13,14 @@ import com.gestione.prenotazioni.aziendali.repository.BuildingRepository;
 public class BuildingService {
 	
 	@Autowired private BuildingRepository build;
+	@Autowired @Qualifier("createBuilding") ObjectProvider<Building> build1;
 
-	public Optional<Building> getByBuildingID(Long id) {
-		return build.findById(id);
+
+	public Building getByBuildingID(Long id) {
+		return build.findById(id).get();
 	}
 	
-	public Building createBuilding(Building bu) {
+	public Building saveBuilding(Building bu) {
 		return build.save(bu);
 	}
 

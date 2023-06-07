@@ -1,8 +1,9 @@
 package com.gestione.prenotazioni.aziendali.services;
 
-import java.util.Optional;
 
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.gestione.prenotazioni.aziendali.model.Booking;
@@ -12,9 +13,10 @@ import com.gestione.prenotazioni.aziendali.repository.BookingRepository;
 public class BookingService {
 
 	@Autowired private BookingRepository bookUser;
+	@Autowired @Qualifier("bookingReservation") ObjectProvider<Booking> book1;
 	
-	public Optional<Booking> getByBooking(Long id) {
-		return bookUser.findById(id);
+	public Booking getByBooking(Long id) {
+		return bookUser.findById(id).get();
 	}
 	
 	public Booking createBooking(Booking book) {
@@ -25,6 +27,7 @@ public class BookingService {
 	public void deleteBooking(Long id) {
 		 bookUser.deleteById(id);
 	}
+	
 	
 	
 }

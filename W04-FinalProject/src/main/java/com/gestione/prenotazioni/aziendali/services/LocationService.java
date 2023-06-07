@@ -1,9 +1,10 @@
 package com.gestione.prenotazioni.aziendali.services;
 
 
-import java.util.Optional;
 
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.gestione.prenotazioni.aziendali.model.Location;
@@ -13,9 +14,11 @@ import com.gestione.prenotazioni.aziendali.repository.LocationRepository;
 public class LocationService {
 	
 	@Autowired private LocationRepository location;
+	@Autowired @Qualifier("newLocation") ObjectProvider<Location> loc1;
+
 	
-	public Optional<Location> getById(Long id) {
-		return location.findById(id);
+	public Location getById(Long id) {
+		return location.findById(id).get();
 	}
 	
 	public Location createLocation(Location loc) {
