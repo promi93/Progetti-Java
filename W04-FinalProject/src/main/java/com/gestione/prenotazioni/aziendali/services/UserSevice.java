@@ -16,6 +16,16 @@ public class UserSevice {
 		return user.findById(id).get();
 	}
 	
+	public User createUser(User id) {
+		return user.save(id);
+	}
+	
+	public void deleteById(Long id) {
+		user.deleteById(id);
+	}
+	
+	
+	
 
 	
 	

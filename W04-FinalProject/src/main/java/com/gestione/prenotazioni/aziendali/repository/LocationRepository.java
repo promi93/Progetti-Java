@@ -11,11 +11,6 @@ import com.gestione.prenotazioni.aziendali.model.TypeOfLocation;
 
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {
-    List<Location> findByTypeBuildingCity(TypeOfLocation privato);
-
-	Iterable<Location> findByTypeBuildingCity(String string);
-
-	Location findById(String string);
 
 }
 

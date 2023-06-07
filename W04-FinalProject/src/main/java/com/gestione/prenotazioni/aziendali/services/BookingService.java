@@ -1,30 +1,29 @@
 package com.gestione.prenotazioni.aziendali.services;
 
-import java.time.LocalDate;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.gestione.prenotazioni.aziendali.model.Booking;
 import com.gestione.prenotazioni.aziendali.repository.BookingRepository;
 
+@Service
 public class BookingService {
 
 	@Autowired private BookingRepository bookUser;
 	
-	public Booking getByBooking(Long id) {
-		return bookUser.findByUserBooking(001, LocalDate.now());
+	public Optional<Booking> getByBooking(Long id) {
+		return bookUser.findById(id);
 	}
 	
 	public Booking createBooking(Booking book) {
 		return bookUser.save(book);
 	}
 	
-	public Booking updateBooking(Booking book) {
-		return bookUser.getReferenceById(001);
-	}
 	
-	public Booking deleteBooking(Booking book) {
-		return bookUser.deleteById(book);
+	public void deleteBooking(Long id) {
+		 bookUser.deleteById(id);
 	}
 	
 	
