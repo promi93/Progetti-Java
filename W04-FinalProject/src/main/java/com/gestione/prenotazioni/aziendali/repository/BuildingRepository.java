@@ -7,5 +7,6 @@ import com.gestione.prenotazioni.aziendali.model.Building;
 
 @Repository
 public interface BuildingRepository extends JpaRepository<Building, Long> {
+
 }
 

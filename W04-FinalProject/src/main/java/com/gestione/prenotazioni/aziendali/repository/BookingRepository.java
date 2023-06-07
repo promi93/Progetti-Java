@@ -11,5 +11,11 @@ import com.gestione.prenotazioni.aziendali.model.User;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
-    List<Booking> findByUserBooking(User user, LocalDate data_prenotazione);
+    List<Booking> findByUserBooking(Long id, LocalDate data_prenotazione);
+
+	Booking findByUserBooking(int i, LocalDate now);
+
+	Booking getReferenceById(int i);
+
+	Booking deleteById(Booking id);
 }

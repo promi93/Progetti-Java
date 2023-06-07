@@ -8,5 +8,8 @@ import com.gestione.prenotazioni.aziendali.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	User findByUsername(String string);
+	User findByID(Long id);
+	User findByUserName(String username);
+	User findByFullName(String fullname);
+	
 }
