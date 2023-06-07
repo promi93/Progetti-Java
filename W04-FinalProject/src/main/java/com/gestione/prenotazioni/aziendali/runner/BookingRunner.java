@@ -9,9 +9,6 @@ import com.gestione.prenotazioni.aziendali.model.Building;
 import com.gestione.prenotazioni.aziendali.model.Location;
 import com.gestione.prenotazioni.aziendali.model.TypeOfLocation;
 import com.gestione.prenotazioni.aziendali.model.User;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
