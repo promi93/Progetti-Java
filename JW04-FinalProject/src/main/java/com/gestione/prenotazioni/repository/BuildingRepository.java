@@ -8,6 +8,6 @@ import com.gestione.prenotazioni.model.Building;
 @Repository
 public interface BuildingRepository extends JpaRepository<Building, Long> {
 
-	public Building findByNameAddressCity(String name, String address, String city);
+	public Building findByNameAndAddressAndCity(String name, String address, String city);
 	
 }

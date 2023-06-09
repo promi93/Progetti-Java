@@ -28,5 +28,7 @@ public class Building {
     private String address;
 
     private String city;
+    
+    
 
 }

@@ -27,7 +27,7 @@ public class BuildingService {
 	}
 
 	public Building createBuilding(Building building) {
-		if(build.findByNameAddressCity(building.getName(), building.getAddress(), building.getCity()) != null) {
+		if(build.findByNameAndAddressAndCity(building.getName(),building.getAddress(), building.getCity()) != null) {
 			throw new EntityExistsException("Edificio già Presente!!!");
 		}
 		return build.save(building);
