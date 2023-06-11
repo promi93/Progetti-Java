@@ -35,26 +35,26 @@ public class UtenteService {
 
 	}
 
-	public String addDispositivoToUente(Dispositivo d, Long id) {
-		Long DIPI = d.getId();
+	public String addDispositivoToUente(Dispositivo dispostivo, Long id) {
+		Long DIPI = dispostivo.getId();
 		Utente u = findUtenteById(id);
 		if (!dispositivoRepo.findById(DIPI).isPresent()) {
-			System.out.println("dispositive inexistant");
-			return "dispositive inexistant";
+			System.out.println("Dispositivo inesistente");
+			return "Dispositivo inesistente";
 		} else if (u == null) {
-			System.out.println("no user found with that id");
+			System.out.println("Utente non trovato!");
 
-			return "no user found with that id";
-		} else if (d.getDisponibilita(null) != StatoDispositivo.DISPONIBILE) {
-			System.out.println("d not available");
-			return "Dispositive not available";
+			return "Utente non trovato!";
+		} else if (dispostivo.getDisponibilita(null) != StatoDispositivo.DISPONIBILE) {
+			System.out.println("Errore dispositivo!");
+			return "Errore dispositivo!";
 		} else {
-			d.getDisponibilita(StatoDispositivo.ASSEGNATO);
-			u.addDisp(d);
-			d.setDipendente(u);
+			dispostivo.getDisponibilita(StatoDispositivo.ASSEGNATO);
+			u.addDisp(dispostivo);
+			dispostivo.setUtente(u);
 			utenteRepo.save(u);
-			System.out.println("dispositive added to user");
-			return "dispositive added to user";
+			System.out.println("Dispositivo assegnato al dipendente!");
+			return "Dispositivo assegnato al dipendente!";
 		}
 
 	}

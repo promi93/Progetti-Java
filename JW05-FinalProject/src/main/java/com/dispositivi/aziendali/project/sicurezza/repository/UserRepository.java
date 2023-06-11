@@ -1,8 +1,9 @@
 package com.dispositivi.aziendali.project.sicurezza.repository;
 
-import org.apache.catalina.User;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.dispositivi.aziendali.project.sicurezza.entity.User;
 
 import java.util.Optional;
 
@@ -17,4 +18,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Boolean existsByUsername(String username);
 
     Boolean existsByEmail(String email);
+
 }

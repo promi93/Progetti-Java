@@ -1,6 +1,6 @@
 package com.dispositivi.aziendali.project.sicurezza.security;
 
-import org.apache.catalina.User;
+import com.dispositivi.aziendali.project.sicurezza.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

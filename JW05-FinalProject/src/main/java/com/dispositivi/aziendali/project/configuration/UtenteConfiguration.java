@@ -27,14 +27,13 @@ public class UtenteConfiguration {
 
 		@Bean("ParamsUtente")
 		@Scope("prototype")
-		public Utente paramsU(String username, String email, String name, String surname, List<Dispositivo> dispositivi) {
-			return new Utente(username, email, name,  surname,
-					 dispositivi);
+		public Utente paramsUser(String username, String email, String name, String surname, List<Dispositivo> dispositivi) {
+			return new Utente(username, email, name,  surname, dispositivi);
 		}
 
-		@Bean("FakeDipendente")
+		@Bean("FakeUtente")
 		@Scope("prototype")
-		public Utente fakeDipendente() {
+		public Utente createFakeDipendente() {
 			Utente u = new Utente();
 			Faker fake = new Faker(new Locale("it-IT"));
 			u.setName(fake.name().firstName());

@@ -35,8 +35,18 @@ public class Utente {  // classe UTENTE rappresentea DIPENDENTE
 	private String email;
 	
 	@JsonIgnoreProperties("dipendente")
-	@OneToMany(mappedBy = "dipendente",fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@OneToMany(mappedBy = "utente",fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private List<Dispositivo> dispositivi;
+	
+	public Utente(String username, String email, String name, String surname, List<Dispositivo> dispositivi) {
+		super();
+		this.username = username;
+		this.email = email;
+		this.name = name;
+		this.surname = surname;
+		this.dispositivi = dispositivi;
+		this.dispositivi.forEach(e->e.setUtente(this));
+	}
 
 	
 public void addDisp(Dispositivo d) {
@@ -44,9 +54,6 @@ public void addDisp(Dispositivo d) {
 }
 
 
-public Utente(String username2, String email2, String name2, String surname2, List<Dispositivo> dispositivi2) {
-	// TODO Auto-generated constructor stub
-}
 
 
 

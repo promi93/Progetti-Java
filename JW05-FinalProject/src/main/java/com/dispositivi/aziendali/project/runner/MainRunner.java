@@ -14,11 +14,12 @@ import com.dispositivi.aziendali.project.service.DispositivoService;
 
 
 @Component
-public class Runner implements ApplicationRunner {
+public class MainRunner implements ApplicationRunner {
 
 	// Service
 	@Autowired UtenteService utenteService;
 	@Autowired DispositivoService dispositivoService;
+	
 	//Repo
     @Autowired UtenteRepository utenteRepository;
     @Autowired DispositivoRepository dispositivoDAORepository;

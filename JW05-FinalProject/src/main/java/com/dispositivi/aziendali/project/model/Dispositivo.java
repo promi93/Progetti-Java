@@ -34,7 +34,7 @@ public class Dispositivo {
 	private StatoDispositivo dispositivoStato;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	private Utente dipendente;
+	private Utente utente;
 
 	public StatoDispositivo getDisponibilita(StatoDispositivo disponibilita) {
 		return disponibilita;

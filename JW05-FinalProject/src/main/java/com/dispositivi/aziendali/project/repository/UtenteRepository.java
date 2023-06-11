@@ -10,5 +10,5 @@ import com.dispositivi.aziendali.project.model.Utente;
 
 @Repository
 public interface UtenteRepository extends JpaRepository<Utente, Long>{
-	public List<Utente> findByNome(String nome);
+	public List<Utente> findByName(String nome);
 }
