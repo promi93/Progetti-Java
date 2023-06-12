@@ -1,3 +1,4 @@
+
 package com.dispositivi.aziendali.project.sicurezza.runner;
 
 import java.util.HashSet;
@@ -32,7 +33,7 @@ public class AuthRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
-		setRoleDefault();
+		//setRoleDefault();
 		
 	}
 	

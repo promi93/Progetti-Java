@@ -81,7 +81,7 @@ public class UtenteService {
 
 	public String removeUtente(Long id) {
 		utenteRepo.deleteById(id);
-		return "User Deleted!!!";
+		return "Utente cancellato!!!";
 	}
 
 	public Utente updateUtente(Utente u) {
