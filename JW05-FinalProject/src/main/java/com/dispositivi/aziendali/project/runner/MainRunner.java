@@ -22,7 +22,7 @@ public class MainRunner implements ApplicationRunner {
 	
 	//Repo
     @Autowired UtenteRepository utenteRepository;
-    @Autowired DispositivoRepository dispositivoDAORepository;
+    @Autowired DispositivoRepository dispositivoRepository;
     
     
     
@@ -31,7 +31,7 @@ public class MainRunner implements ApplicationRunner {
 		
 		dispositivoService.createDispositivo(DispositivoAssegnato.SMARTPHONE, StatoDispositivo.DISMESSO, null);
 		utenteService.createFakeDipendente();
-		utenteService.addDispositivoToUente(dispositivoDAORepository.findById(1l).get(), 2l);
+		utenteService.addDispositivoToUente(dispositivoRepository.findById(1l).get(), 2l);
 
 	}
 
