@@ -33,9 +33,15 @@ public class AuthRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
-		//setRoleDefault();
+		
+		// setRoleDefault();
+	
+		  
+		
 		
 	}
+	
+
 	
 	private void setRoleDefault() {
 		Role admin = new Role();
