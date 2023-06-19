@@ -3,7 +3,7 @@ package com.gestione.incendi.project.model;
 import com.gestione.incendi.project.interfaccia.RilevatoreSonda;
 
 public class CentroControllo implements RilevatoreSonda {
-    private String url;
+    private String url="http://alarm?";
 
     public CentroControllo(String url) {
         this.url = url;
@@ -25,7 +25,7 @@ public class CentroControllo implements RilevatoreSonda {
     }
 
     public String creaAllarmeUrl(Sonda sonda) {
-        return url + "?idsonda=" + sonda.getId_Sonda() +
+        return url + "idsonda=" + sonda.getId_Sonda() +
                 "&lat=" + sonda.getLatitudine() +
                 "&lon=" + sonda.getLongitudine() +
                 "&smokelevel=" + sonda.getSmokeLevel();
